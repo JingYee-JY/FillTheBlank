@@ -8,6 +8,8 @@ const right = document.querySelector(".right");
 const image = document.querySelector(".image");
 const popUp = document.querySelector(".popUp");
 const final = document.querySelector(".final");
+const againButton = document.querySelector(".againButton");
+const homeButton = document.querySelector(".homeButton");
 
 const clickSound = document.getElementById("click")
 const clap = document.getElementById("clap")
@@ -142,6 +144,21 @@ for(let b = 1; b < 3; b++){
         }
     })
 }
+
+againButton.addEventListener("click", () =>{
+    playClickSound()
+    let daley = setTimeout(() =>{
+        final.classList.add("hide")
+        start.classList.remove("hide")
+    }, 200)
+})
+
+homeButton.addEventListener("click", ()=>{
+    playClickSound()
+    let daley = setTimeout(() =>{
+        location.assign('https://gimme.sg/activations/dementia/');
+    }, 200)
+})
 
 function playClickSound(){
     console.log(clickSound)
